@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DummyService } from '../../../services/dummy.service';
 
 @Component({
   selector: 'app-orders',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersComponent implements OnInit {
 
-  constructor() { }
+  private data: any;
+  constructor(private dummyService: DummyService) { }
 
   ngOnInit() {
+    this.dummyService.getJsonPhotoData().subscribe((res) => {
+      this.data = res;
+    });
   }
-
 }
