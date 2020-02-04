@@ -1,9 +1,13 @@
 <div>
   <ul>
     <li *ngFor="let d of data">
-      <span>{{d.title}}</span><br>
-      <span>{{d.url}}</span><br>
-      <span>{{d.id}}</span><br>
+        <div class="media">
+            <img style="max-width: 50px;max-height:50px" [src]=[d.url] class="align-self-start mr-3" alt="...">
+            <div class="media-body">
+              <h5 class="mt-0">{{d.title}}</h5>
+              <p>{{d.id}}</p>
+            </div>
+          </div>
     </li>
   </ul>
 </div>
